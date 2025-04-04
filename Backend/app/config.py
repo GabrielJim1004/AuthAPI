@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     # JWT Settings
     JWT_SECRET_KEY: str = os.getenv("JWT_SECRET_KEY", "supersecretkey")
     JWT_ALGORITHM: str = "HS256"
-    JWT_ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
+    JWT_ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 
     
     # Database Settings
     DATABASE_URL: str = os.getenv(
