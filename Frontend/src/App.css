@@ -1,0 +1,299 @@
+/* Coffee Shop Theme - Modern Auth App Styling */
+:root {
+  --coffee-dark: #362517;
+  --coffee-medium: #6F4E37;
+  --coffee-light: #B18962;
+  --cream: #F5F1E6;
+  --cream-dark: #E8DFC6;
+  --espresso: #2C1E1A;
+  --accent: #D4A36A;
+  --success: #5A8A50;
+  --error: #A63D40;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-image: linear-gradient(rgba(245, 241, 230, 0.9), rgba(245, 241, 230, 0.9)), 
+                    url('https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--espresso);
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--coffee-light);
+}
+
+header h1 {
+  color: var(--coffee-dark);
+  font-weight: 600;
+  font-size: 2.2rem;
+}
+
+header h1 span {
+  color: var(--coffee-medium);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--coffee-medium);
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  padding: 8px 15px;
+  border-radius: 30px;
+}
+
+nav ul li a:hover {
+  color: var(--coffee-dark);
+  background-color: var(--cream-dark);
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--coffee-dark);
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--coffee-light);
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--coffee-medium);
+  box-shadow: 0 0 0 2px rgba(111, 78, 55, 0.3);
+}
+
+button {
+  padding: 12px 20px;
+  background-color: var(--coffee-medium);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: var(--coffee-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Container Styles */
+.login-container,
+.register-container,
+.profile-container,
+.home-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.92);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(54, 37, 23, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-container::before,
+.register-container::before,
+.profile-container::before,
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--coffee-light), var(--accent), var(--coffee-medium));
+}
+
+h2 {
+  margin-bottom: 25px;
+  color: var(--coffee-dark);
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* Error Message Styles */
+.error-message {
+  color: var(--error);
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: rgba(166, 61, 64, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid var(--error);
+}
+
+/* Loading Styles */
+.loading {
+  text-align: center;
+  padding: 30px;
+  font-size: 18px;
+  color: var(--coffee-medium);
+}
+
+.loading::after {
+  content: '☕';
+  display: inline-block;
+  margin-left: 8px;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-8px);
+  }
+}
+
+/* Profile Styles */
+.profile-details {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: var(--cream);
+  border-radius: 8px;
+}
+
+.profile-details p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.profile-details p strong {
+  color: var(--coffee-medium);
+  font-weight: 600;
+}
+
+.logout-button {
+  margin-top: 25px;
+  background-color: var(--error);
+  width: 100%;
+}
+
+.logout-button:hover {
+  background-color: #8B3033;
+}
+
+/* Link Styles */
+a {
+  color: var(--coffee-medium);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--coffee-dark);
+  text-decoration: underline;
+}
+
+/* Form Links */
+form + p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+/* Home Page */
+.home-container {
+  max-width: 800px;
+  text-align: center;
+  padding: 40px;
+}
+
+.home-container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.home-container p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: var(--coffee-medium);
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.home-buttons a {
+  padding: 12px 30px;
+  background-color: var(--coffee-medium);
+  color: white;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.home-buttons a:hover {
+  background-color: var(--coffee-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Coffee Icon */
+.coffee-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--coffee-medium);
+}
+
