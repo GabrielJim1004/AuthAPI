@@ -1,0 +1,6 @@
+# Ignorar archivos sensibles
+__pycache__/
+*.pyc
+*.pyo
+node_modules/
+venv/
