@@ -3,16 +3,15 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from .config import settings
 
-# Create database engine
+# Crear el motor de conexión a la base de datos
 engine = create_engine(settings.DATABASE_URL)
 
-# Create SessionLocal class
+# Crear la clase SessionLocal
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-# Create Base class
+# Crear la clase Base
 Base = declarative_base()
 
-# Database dependency
+# Dependencia para la base de datos
 def get_db():
     db = SessionLocal()
     try:
