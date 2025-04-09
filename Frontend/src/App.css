@@ -36,7 +36,7 @@ body {
   padding: 20px; /* Padding around the app */
 }
 
-/* Header styles */
+/* Header Styles */
 header {
   display: flex; /* Flexbox for layout */
   justify-content: space-between; /* Space between elements */
