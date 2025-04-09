@@ -1,11 +1,11 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
-// Create the auth context
+// Crea el contexto de autenticación
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+    // Estados para gestionar los datos del usuario, token, estado de carga y mensajes de error
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(localStorage.getItem('token') || null);
     const [loading, setLoading] = useState(true);
@@ -13,9 +13,9 @@ export const AuthProvider = ({ children }) => {
     
     const navigate = useNavigate();
     
-    const API_URL = 'http://127.0.0.1:8000'; // Adjust this to your API URL
+    const API_URL = 'http://127.0.0.1:8000'; // URL del backend
     
-    // Check if token exists and fetch user data when component mounts
+    // Verifica el token y obtiene los datos del usuario cuando el componente se monta
     useEffect(() => {
         const verifyToken = async () => {
             if (token) {
@@ -30,14 +30,14 @@ export const AuthProvider = ({ children }) => {
                         const userData = await response.json();
                         setUser(userData);
                     } else {
-                        // Token invalid or expired
+                        // Maneja tokens inválidos o expirados
                         localStorage.removeItem('token');
                         setToken(null);
                         setUser(null);
                     }
                 } catch (err) {
-                    console.error('Error verifying token:', err);
-                    setError('Authentication failed. Please login again.');
+                    console.error('Error al verificar el token:', err);
+                    setError('La autenticación falló. Por favor, inicia sesión nuevamente.');
                     localStorage.removeItem('token');
                     setToken(null);
                     setUser(null);
@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
         verifyToken();
     }, [token]);
     
-    // Register a new user
+    // Registra un nuevo usuario
     const register = async (name, lastname, email, password) => {
         setLoading(true);
         setError(null);
@@ -61,7 +61,7 @@ export const AuthProvider = ({ children }) => {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify({ name, lastname, email, password }) // Ensure this matches the backend schema
+                body: JSON.stringify({ name, lastname, email, password }) // Asegúrate de que coincida con el esquema del backend
             });
     
             const data = await response.json();
@@ -71,17 +71,17 @@ export const AuthProvider = ({ children }) => {
                 setToken(data.token);
                 navigate('/profile');
             } else {
-                setError(data.detail || 'Registration failed');
+                setError(data.detail || 'El registro falló');
             }
         } catch (err) {
-            console.error('Registration error:', err);
-            setError('Registration failed. Please try again.');
+            console.error('Error al registrar:', err);
+            setError('El registro falló. Por favor, intenta nuevamente.');
         }
     
         setLoading(false);
     };
     
-    // Login user
+    // Inicia sesión de un usuario
     const login = async (email, password) => {
         setLoading(true);
         setError(null);
@@ -102,17 +102,17 @@ export const AuthProvider = ({ children }) => {
                 setToken(data.token);
                 navigate('/profile');
             } else {
-                setError(data.detail || 'Login failed');
+                setError(data.detail || 'El inicio de sesión falló');
             }
         } catch (err) {
-            console.error('Login error:', err);
-            setError('Login failed. Please try again.');
+            console.error('Error al iniciar sesión:', err);
+            setError('El inicio de sesión falló. Por favor, intenta nuevamente.');
         }
         
         setLoading(false);
     };
     
-    // Logout user
+    // Cierra sesión del usuario
     const logout = () => {
         localStorage.removeItem('token');
         setToken(null);
@@ -120,7 +120,7 @@ export const AuthProvider = ({ children }) => {
         navigate('/login');
     };
     
-    // Check if user is authenticated
+    // Verifica si el usuario está autenticado
     const isAuthenticated = !!token;
     
     return (

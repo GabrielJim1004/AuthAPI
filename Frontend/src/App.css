@@ -1,299 +1,303 @@
 /* Coffee Shop Theme - Modern Auth App Styling */
+
+/* Define theme colors for the coffee shop app */
 :root {
-  --coffee-dark: #362517;
-  --coffee-medium: #6F4E37;
-  --coffee-light: #B18962;
-  --cream: #F5F1E6;
-  --cream-dark: #E8DFC6;
-  --espresso: #2C1E1A;
-  --accent: #D4A36A;
-  --success: #5A8A50;
-  --error: #A63D40;
+  --coffee-dark: #362517; /* Dark coffee color */
+  --coffee-medium: #6F4E37; /* Medium coffee color */
+  --coffee-light: #B18962; /* Light coffee color */
+  --cream: #F5F1E6; /* Cream background color */
+  --cream-dark: #E8DFC6; /* Darker cream color */
+  --espresso: #2C1E1A; /* Espresso brown color */
+  --accent: #D4A36A; /* Accent color for highlights */
+  --success: #5A8A50; /* Success green color */
+  --error: #A63D40; /* Error red color */
 }
 
+/* Reset and global styles */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box; /* Include padding and border in element's width/height */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  font-family: 'Poppins', sans-serif; /* Default font family */
 }
 
 body {
   background-image: linear-gradient(rgba(245, 241, 230, 0.9), rgba(245, 241, 230, 0.9)), 
-                    url('https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');
-  background-size: cover;
-  background-attachment: fixed;
-  color: var(--espresso);
-  line-height: 1.6;
+                    url('https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80'); /* Background image with gradient */
+  background-size: cover; /* Cover the entire viewport */
+  background-attachment: fixed; /* Fixed background */
+  color: var(--espresso); /* Default text color */
+  line-height: 1.6; /* Default line height */
 }
 
 .app-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 1200px; /* Maximum width for the app */
+  margin: 0 auto; /* Center the app horizontally */
+  padding: 20px; /* Padding around the app */
 }
 
-/* Header Styles */
+/* Header styles */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  margin-bottom: 30px;
-  border-bottom: 2px solid var(--coffee-light);
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space between elements */
+  align-items: center; /* Align items vertically */
+  padding: 20px 0; /* Padding for header */
+  margin-bottom: 30px; /* Space below header */
+  border-bottom: 2px solid var(--coffee-light); /* Bottom border */
 }
 
 header h1 {
-  color: var(--coffee-dark);
-  font-weight: 600;
-  font-size: 2.2rem;
+  color: var(--coffee-dark); /* Dark coffee color for title */
+  font-weight: 600; /* Bold title */
+  font-size: 2.2rem; /* Font size for title */
 }
 
 header h1 span {
-  color: var(--coffee-medium);
+  color: var(--coffee-medium); /* Medium coffee color for highlighted text */
 }
 
 nav ul {
-  display: flex;
-  list-style: none;
+  display: flex; /* Flexbox for navigation links */
+  list-style: none; /* Remove bullet points */
 }
 
 nav ul li {
-  margin-left: 30px;
+  margin-left: 30px; /* Space between links */
 }
 
 nav ul li a {
-  text-decoration: none;
-  color: var(--coffee-medium);
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  padding: 8px 15px;
-  border-radius: 30px;
+  text-decoration: none; /* Remove underline */
+  color: var(--coffee-medium); /* Medium coffee color for links */
+  font-weight: 500; /* Slightly bold links */
+  font-size: 1.1rem; /* Font size for links */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  padding: 8px 15px; /* Padding for links */
+  border-radius: 30px; /* Rounded corners */
 }
 
 nav ul li a:hover {
-  color: var(--coffee-dark);
-  background-color: var(--cream-dark);
+  color: var(--coffee-dark); /* Dark coffee color on hover */
+  background-color: var(--cream-dark); /* Cream background on hover */
 }
 
-/* Form Styles */
+/* Form styles */
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Space between form fields */
 }
 
 label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-  color: var(--coffee-dark);
+  display: block; /* Block-level element */
+  margin-bottom: 8px; /* Space below label */
+  font-weight: 500; /* Slightly bold labels */
+  color: var(--coffee-dark); /* Dark coffee color for labels */
 }
 
 input {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid var(--coffee-light);
-  border-radius: 8px;
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.9);
-  transition: all 0.3s ease;
+  width: 100%; /* Full width inputs */
+  padding: 12px 15px; /* Padding inside inputs */
+  border: 1px solid var(--coffee-light); /* Light coffee border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 16px; /* Font size for inputs */
+  background-color: rgba(255, 255, 255, 0.9); /* Light background */
+  transition: all 0.3s ease; /* Smooth transition for focus effects */
 }
 
 input:focus {
-  outline: none;
-  border-color: var(--coffee-medium);
-  box-shadow: 0 0 0 2px rgba(111, 78, 55, 0.3);
+  outline: none; /* Remove default outline */
+  border-color: var(--coffee-medium); /* Medium coffee border on focus */
+  box-shadow: 0 0 0 2px rgba(111, 78, 55, 0.3); /* Shadow effect on focus */
 }
 
+/* Button styles */
 button {
-  padding: 12px 20px;
-  background-color: var(--coffee-medium);
-  color: white;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  display: inline-block;
-  margin-top: 10px;
+  padding: 12px 20px; /* Padding for buttons */
+  background-color: var(--coffee-medium); /* Medium coffee background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 30px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size for buttons */
+  font-weight: 500; /* Slightly bold text */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  display: inline-block; /* Inline-block for layout */
+  margin-top: 10px; /* Space above button */
 }
 
 button:hover {
-  background-color: var(--coffee-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--coffee-dark); /* Dark coffee background on hover */
+  transform: translateY(-2px); /* Slight upward movement on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
 }
 
 button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
+  background-color: #ccc; /* Gray background for disabled buttons */
+  cursor: not-allowed; /* Not-allowed cursor for disabled buttons */
+  transform: none; /* Remove hover effect */
+  box-shadow: none; /* Remove shadow */
 }
 
-/* Container Styles */
+/* Container styles for different sections */
 .login-container,
 .register-container,
 .profile-container,
 .home-container {
-  max-width: 500px;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: rgba(255, 255, 255, 0.92);
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(54, 37, 23, 0.15);
-  position: relative;
-  overflow: hidden;
+  max-width: 500px; /* Maximum width for containers */
+  margin: 40px auto; /* Center containers horizontally */
+  padding: 30px; /* Padding inside containers */
+  background-color: rgba(255, 255, 255, 0.92); /* Light background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 20px rgba(54, 37, 23, 0.15); /* Shadow effect */
+  position: relative; /* Position relative for pseudo-elements */
+  overflow: hidden; /* Hide overflow */
 }
 
 .login-container::before,
 .register-container::before,
 .profile-container::before,
 .home-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(to right, var(--coffee-light), var(--accent), var(--coffee-medium));
+  content: ''; /* Empty content for pseudo-elements */
+  position: absolute; /* Position absolute for pseudo-elements */
+  top: 0; /* Position at the top */
+  left: 0; /* Position at the left */
+  width: 100%; /* Full width */
+  height: 5px; /* Height of pseudo-elements */
+  background: linear-gradient(to right, var(--coffee-light), var(--accent), var(--coffee-medium)); /* Gradient background */
 }
 
 h2 {
-  margin-bottom: 25px;
-  color: var(--coffee-dark);
-  font-weight: 600;
-  text-align: center;
-  font-size: 1.8rem;
+  margin-bottom: 25px; /* Space below heading */
+  color: var(--coffee-dark); /* Dark coffee color for heading */
+  font-weight: 600; /* Bold heading */
+  text-align: center; /* Center align heading */
+  font-size: 1.8rem; /* Font size for heading */
 }
 
-/* Error Message Styles */
+/* Error message styles */
 .error-message {
-  color: var(--error);
-  margin-bottom: 15px;
-  padding: 12px;
-  background-color: rgba(166, 61, 64, 0.1);
-  border-radius: 8px;
-  border-left: 4px solid var(--error);
+  color: var(--error); /* Error red color for text */
+  margin-bottom: 15px; /* Space below error message */
+  padding: 12px; /* Padding inside error message */
+  background-color: rgba(166, 61, 64, 0.1); /* Light red background */
+  border-radius: 8px; /* Rounded corners */
+  border-left: 4px solid var(--error); /* Left border for error message */
 }
 
-/* Loading Styles */
+/* Loading styles */
 .loading {
-  text-align: center;
-  padding: 30px;
-  font-size: 18px;
-  color: var(--coffee-medium);
+  text-align: center; /* Center align loading text */
+  padding: 30px; /* Padding around loading text */
+  font-size: 18px; /* Font size for loading text */
+  color: var(--coffee-medium); /* Medium coffee color for loading text */
 }
 
 .loading::after {
-  content: '☕';
-  display: inline-block;
-  margin-left: 8px;
-  animation: bounce 1s infinite alternate;
+  content: '☕'; /* Coffee cup icon */
+  display: inline-block; /* Inline-block for layout */
+  margin-left: 8px; /* Space to the left of icon */
+  animation: bounce 1s infinite alternate; /* Bounce animation */
 }
 
 @keyframes bounce {
   from {
-    transform: translateY(0);
+    transform: translateY(0); /* Start position */
   }
   to {
-    transform: translateY(-8px);
+    transform: translateY(-8px); /* End position */
   }
 }
 
-/* Profile Styles */
+/* Profile details styles */
 .profile-details {
-  margin-top: 25px;
-  padding: 20px;
-  background-color: var(--cream);
-  border-radius: 8px;
+  margin-top: 25px; /* Space above profile details */
+  padding: 20px; /* Padding inside profile details */
+  background-color: var(--cream); /* Cream background */
+  border-radius: 8px; /* Rounded corners */
 }
 
 .profile-details p {
-  margin-bottom: 15px;
-  font-size: 1.1rem;
+  margin-bottom: 15px; /* Space below paragraphs */
+  font-size: 1.1rem; /* Font size for paragraphs */
 }
 
 .profile-details p strong {
-  color: var(--coffee-medium);
-  font-weight: 600;
+  color: var(--coffee-medium); /* Medium coffee color for strong text */
+  font-weight: 600; /* Bold strong text */
 }
 
 .logout-button {
-  margin-top: 25px;
-  background-color: var(--error);
-  width: 100%;
+  margin-top: 25px; /* Space above logout button */
+  background-color: var(--error); /* Error red background */
+  width: 100%; /* Full width button */
 }
 
 .logout-button:hover {
-  background-color: #8B3033;
+  background-color: #8B3033; /* Darker red background on hover */
 }
 
-/* Link Styles */
+/* Link styles */
 a {
-  color: var(--coffee-medium);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
+  color: var(--coffee-medium); /* Medium coffee color for links */
+  text-decoration: none; /* Remove underline */
+  font-weight: 500; /* Slightly bold links */
+  transition: color 0.3s; /* Smooth transition for hover effects */
 }
 
 a:hover {
-  color: var(--coffee-dark);
-  text-decoration: underline;
+  color: var(--coffee-dark); /* Dark coffee color on hover */
+  text-decoration: underline; /* Underline on hover */
 }
 
-/* Form Links */
+/* Form links */
 form + p {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.95rem;
+  text-align: center; /* Center align text */
+  margin-top: 20px; /* Space above text */
+  font-size: 0.95rem; /* Font size for text */
 }
 
 /* Home Page */
 .home-container {
-  max-width: 800px;
-  text-align: center;
-  padding: 40px;
+  max-width: 800px; /* Maximum width for home container */
+  text-align: center; /* Center align text */
+  padding: 40px; /* Padding inside home container */
 }
 
 .home-container h2 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
+  font-size: 2.2rem; /* Font size for heading */
+  margin-bottom: 15px; /* Space below heading */
 }
 
 .home-container p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: var(--coffee-medium);
+  font-size: 1.1rem; /* Font size for paragraphs */
+  margin-bottom: 30px; /* Space below paragraphs */
+  color: var(--coffee-medium); /* Medium coffee color for text */
 }
 
 .home-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  display: flex; /* Flexbox for buttons */
+  justify-content: center; /* Center align buttons */
+  gap: 20px; /* Space between buttons */
 }
 
 .home-buttons a {
-  padding: 12px 30px;
-  background-color: var(--coffee-medium);
-  color: white;
-  border-radius: 30px;
-  font-weight: 500;
-  transition: all 0.3s;
-  text-decoration: none;
+  padding: 12px 30px; /* Padding inside buttons */
+  background-color: var(--coffee-medium); /* Medium coffee background */
+  color: white; /* White text */
+  border-radius: 30px; /* Rounded corners */
+  font-weight: 500; /* Slightly bold text */
+  transition: all 0.3s; /* Smooth transition for hover effects */
+  text-decoration: none; /* Remove underline */
 }
 
 .home-buttons a:hover {
-  background-color: var(--coffee-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--coffee-dark); /* Dark coffee background on hover */
+  transform: translateY(-2px); /* Slight upward movement on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
 }
 
-/* Coffee Icon */
+/* Coffee icon styles */
 .coffee-icon {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: var(--coffee-medium);
+  font-size: 2.5rem; /* Font size for icon */
+  margin-bottom: 20px; /* Space below icon */
+  color: var(--coffee-medium); /* Medium coffee color for icon */
 }
 
