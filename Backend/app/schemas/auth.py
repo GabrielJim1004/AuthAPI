@@ -30,4 +30,4 @@ class UserDto(BaseModel):
     #Permite que este esquema se convierta en un modelo de SQLAlchemy.
     #Esto es útil para interactuar con la base de datos y realizar operaciones CRUD.
     class Config:  
-        orm_mode = True
+        from_attributes = True  # Reemplaza orm_mode por from_attributes

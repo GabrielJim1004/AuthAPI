@@ -100,7 +100,7 @@ export const AuthProvider = ({ children }) => {
             if (response.ok) {
                 localStorage.setItem('token', data.token);
                 setToken(data.token);
-                navigate('/profile');
+                navigate('/store'); // Redirige a la tienda
             } else {
                 setError(data.detail || 'El inicio de sesión falló');
             }

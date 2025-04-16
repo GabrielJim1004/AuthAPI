@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from app.api.routes import auth_router
+from app.api.routes.product import router as product_router
+from app.api.routes.currency import router as currency_router
 from fastapi.middleware.cors import CORSMiddleware
 
 # Create FastAPI app
@@ -10,6 +12,10 @@ app = FastAPI(
 )
 # Incluir las rutas de autenticación
 app.include_router(auth_router)
+# Incluir las rutas de productos
+app.include_router(product_router)
+# Incluir las rutas de tasas de cambio
+app.include_router(currency_router)
 
 # Configuración de los orígenes permitidos para CORS
 origins = [

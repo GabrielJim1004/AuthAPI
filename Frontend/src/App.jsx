@@ -5,6 +5,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import UserProfile from './components/UserProfile';
 import ProtectedRoute from './components/ProtectedRoute';
+import Store from './components/Store';
 import './App.css';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
                                 <li><Link to="/register">Registrarse</Link></li>
                                 <li><Link to="/login">Iniciar sesión</Link></li>
                                 <li><Link to="/profile">Mi cuenta</Link></li>
+                                <li><Link to="/store">Tienda</Link></li>
                             </ul>
                         </nav>
                     </header>
@@ -37,6 +39,7 @@ const App = () => {
                                     <UserProfile />
                                 </ProtectedRoute>
                             } />
+                            <Route path="/store" element={<Store />} />
                         </Routes>
                     </main>
                 </div>

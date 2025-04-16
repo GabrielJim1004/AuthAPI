@@ -301,3 +301,28 @@ form + p {
   color: var(--coffee-medium); /* Medium coffee color for icon */
 }
 
+/* Store Page */
+.store-container {
+  padding: 20px;
+}
+
+.currency-selector {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
